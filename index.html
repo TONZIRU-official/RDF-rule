@@ -1,112 +1,188 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RDF 規約</title>
-  <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #0d1117;
-      color: #e6edf3;
-      margin: 0;
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      color: #58a6ff;
-    }
-    h3 {
-      margin-top: 30px;
-    }
-    p, li {
-      line-height: 1.6;
-      font-size: 16px;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    a {
-      color: #238636;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDF 規約 | 反荒らし共同防衛機構</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mod-blue: #002d56;
+        }
+        body { 
+            font-family: 'Noto Sans JP', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+            background-color: #f4f7f9; /* 少し青みがかった公的なグレー */
+            color: #1a1a1a;
+            line-height: 2;
+        }
+        /* 縦書きの「公報」のような雰囲気を持たせる余白設定 */
+        .document-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 80px 100px;
+            box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 12px solid var(--mod-blue);
+            position: relative;
+        }
+        /* 承認印スペース（遊び心） */
+        .seal-space {
+            position: absolute;
+            top: 80px;
+            right: 100px;
+            width: 80px;
+            height: 80px;
+            border: 2px dashed #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ddd;
+            font-size: 10px;
+            text-align: center;
+        }
+        h1 { font-weight: 900; color: var(--mod-blue); letter-spacing: 0.1em; }
+        h3 { 
+            font-weight: 900; 
+            color: var(--mod-blue); 
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+        h3::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 1.2em;
+            background: var(--mod-blue);
+            margin-right: 12px;
+        }
+        ul { list-style-type: none; padding-left: 1.5em; }
+        li { position: relative; margin-bottom: 0.5em; }
+        li::before {
+            content: "・";
+            position: absolute;
+            left: -1.2em;
+            font-weight: bold;
+            color: var(--mod-blue);
+        }
+        .footer-note {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px double #ccc;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .back-link {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--mod-blue);
+            color: white;
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+    </style>
 </head>
 <body>
-  <h1>RDF 規約</h1>
 
-  <h3>🔷 第1条　目的</h3>
-  <p>RDF（Rapid Defense Force）は、Discord上の荒らし行為・攻撃行為からサーバーを守るために加盟サーバー間で情報共有・自動通報・共同防衛を行う連合組織である。本規約は、RDFネットワークの秩序・安全性の維持を目的とする。</p>
+    <a href="index.html" class="back-link">◀ メインページへ戻る</a>
 
-  <h3>🔷 第2条　適用範囲</h3>
-  <p>本規約は以下に適用される。</p>
-  <ul>
-    <li>RDFに加盟するすべてのサーバー</li>
-    <li>RDFの連携Bot（RDF-Charlie など）</li>
-    <li>RDF運営チーム（本部）</li>
-    <li>RDFの情報を利用する外部協力者</li>
-  </ul>
+    <div class="document-container">
+        <div class="seal-space">機構長<br>承認印</div>
 
-  <h3>🔷 第3条　加盟条件</h3>
-  <ul>
-    <li>反荒らし活動を主目的とすること</li>
-    <li>自サーバー及び外部に対して荒らし・攻撃行為を行わないこと</li>
-    <li>RDFの情報を悪用しないこと</li>
-    <li>RDF連携Botの導入に協力できること</li>
-    <li>過去に重大な規約違反のないこと</li>
-    <li>運営チームが承認した場合</li>
-  </ul>
-　<h3>🔷 第4条　禁止事項</h3>
-<ul>
-  <li>RDFが提供する情報・データの無断公開、転載、二次配布</li>
-  <li>RDFや加盟サーバーの信用を損なう行為</li>
-  <li>RDF連携Botの改変・不正利用</li>
-  <li>他加盟サーバー・運営への誹謗中傷</li>
-  <li>法令またはDiscord規約に違反する行為</li>
-</ul>
+        <div class="text-center mb-20">
+            <h1 class="text-3xl">RDF 規約</h1>
+            <p class="text-xs text-gray-400 mt-2 tracking-[0.3em]">RAID DEFENSE FORCE REGULATION</p>
+        </div>
 
-<h3>🔷 第5条　連携Botの利用</h3>
-<ul>
-  <li>RDF連携Botは加盟サーバーに限り利用可能とする</li>
-  <li>Botのソースコード解析・再配布は禁止とする</li>
-  <li>Botが送信するデータを第三者へ提供することを禁止</li>
-  <li>Botが不具合・誤作動した場合、速やかに運営へ報告するものとする</li>
-</ul>
+        <section>
+            <h3>第1条　目的</h3>
+            <p class="pl-6">RDF（Rapid Defense Force）は、Discord上の荒らし行為・攻撃行為からサーバーを守るために加盟サーバー間で情報共有・自動通報・共同防衛を行う連合組織である。本規約は、RDFネットワークの秩序・安全性の維持を目的とする。</p>
 
-<h3>🔷 第6条　情報の取り扱い</h3>
-<ul>
-  <li>荒らし情報・ブラックリスト情報を外部へ漏洩してはならない</li>
-  <li>提供されたデータは加盟サーバー内でのみ使用可能とする</li>
-  <li>情報漏洩が発覚した場合、即時加盟停止の対象となる</li>
-</ul>
+            <h3>第2条　適用範囲</h3>
+            <p class="pl-6 mb-2 text-sm font-bold text-gray-500 underline">本規約は以下に適用される。</p>
+            <ul>
+                <li>RDFに加盟するすべてのサーバー</li>
+                <li>RDFの連携Bot（RDF-Charlie など）</li>
+                <li>RDF運営チーム（本部）</li>
+                <li>RDFの情報を利用する外部協力者</li>
+            </ul>
 
-<h3>🔷 第7条　加盟停止・除名</h3>
-<ul>
-  <li>重大な規約違反が認められた場合、運営はサーバーを除名できる</li>
-  <li>軽度の違反の場合、警告または一時的な加盟停止を行う</li>
-  <li>除名後の再加盟は運営の審査を要する</li>
-</ul>
+            <h3>第3条　加盟条件</h3>
+            <ul>
+                <li>反荒らし活動を主目的とすること</li>
+                <li>自サーバー及び外部に対して荒らし・攻撃行為を行わないこと</li>
+                <li>RDFの情報を悪用しないこと</li>
+                <li>RDF連携Botの導入に協力できること</li>
+                <li>過去に重大な規約違反のないこと</li>
+                <li>運営チームが承認した場合</li>
+            </ul>
 
-<h3>🔷 第8条　免責事項</h3>
-<ul>
-  <li>RDFはBotの停止・不具合による損害に責任を負わない</li>
-  <li>提供する情報の完全性・正確性を保証するものではない</li>
-  <li>加盟サーバー同士のトラブルに関してRDFは一切責任を負わない</li>
-</ul>
+            <h3>第4条　禁止事項</h3>
+            <ul>
+                <li>RDFが提供する情報・データの無断公開、転載、二次配布</li>
+                <li>RDFや加盟サーバーの信用を損なう行為</li>
+                <li>RDF連携Botの改変・不正利用</li>
+                <li>他加盟サーバー・運営への誹謗中傷</li>
+                <li>法令またはDiscord規約に違反する行為</li>
+            </ul>
 
-<h3>🔷 第9条　規約の改定</h3>
-<ul>
-  <li>RDF運営は必要に応じて規約を変更できる</li>
-  <li>重大な変更がある場合は加盟サーバーへ通知するものとする</li>
-  <li>改定後も利用を継続する場合、変更に同意したものとみなす</li>
-</ul>
+            <h3>第5条　連携Botの利用</h3>
+            <ul>
+                <li>RDF連携Botは加盟サーバーに限り利用可能とする</li>
+                <li>Botのソースコード解析・再配布は禁止とする</li>
+                <li>Botが送信するデータを第三者へ提供することを禁止</li>
+                <li>Botが不具合・誤作動した場合、速やかに運営へ報告するものとする</li>
+            </ul>
 
-<h3>🔷 第10条　施行日</h3>
-<p>本規約は公開日より施行する。</p>
-  
+            <h3>第6条　情報の取り扱い</h3>
+            <ul>
+                <li>荒らし情報・ブラックリスト情報を外部へ漏洩してはならない</li>
+                <li>提供されたデータは加盟サーバー内でのみ使用可能とする</li>
+                <li>情報漏洩が発覚した場合、即時加盟停止の対象となる</li>
+            </ul>
 
-  <!-- 以下、同様に第4条～第10条を追加 -->
+            <h3>第7条　加盟停止・除名</h3>
+            <ul>
+                <li>重大な規約違反が認められた場合、運営はサーバーを除名できる</li>
+                <li>軽度の違反の場合、警告または一時的な加盟停止を行う</li>
+                <li>除名後の再加盟は運営の審査を要する</li>
+            </ul>
+
+            <h3>第8条　免責事項</h3>
+            <ul>
+                <li>RDFはBotの停止・不具合による損害に責任を負わない</li>
+                <li>提供する情報の完全性・正確性を保証するものではない</li>
+                <li>加盟サーバー同士のトラブルに関してRDFは一切責任を負わない</li>
+            </ul>
+
+            <h3>第9条　規約の改定</h3>
+            <ul>
+                <li>RDF運営は必要に応じて規約を変更できる</li>
+                <li>重大な変更がある場合は加盟サーバーへ通知するものとする</li>
+                <li>改定後も利用を継続する場合、変更に同意したものとみなす</li>
+            </ul>
+
+            <h3>第10条　施行日</h3>
+            <p class="pl-6 font-bold text-blue-900 tracking-wider">本規約は公開日より施行する。</p>
+        </section>
+
+        <div class="footer-note flex justify-between items-end">
+            <div>
+                <p>反荒らし共同防衛機構（RDF）</p>
+                <p>法務・規約管理部門</p>
+            </div>
+            <div class="text-right">
+                <p class="text-[10px] italic">Document ID: RDF-ToS-Main</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
