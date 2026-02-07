@@ -3,186 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RDF 規約 | 反荒らし共同防衛機構</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>ゆっくりのしょー公式サーバー人気投票</title>
     <style>
-        :root {
-            --mod-blue: #002d56;
-        }
-        body { 
-            font-family: 'Noto Sans JP', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
-            background-color: #f4f7f9; /* 少し青みがかった公的なグレー */
-            color: #1a1a1a;
-            line-height: 2;
-        }
-        /* 縦書きの「公報」のような雰囲気を持たせる余白設定 */
-        .document-container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: white;
-            padding: 80px 100px;
-            box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 2px 10px rgba(0,0,0,0.05);
-            border-top: 12px solid var(--mod-blue);
-            position: relative;
-        }
-        /* 承認印スペース（遊び心） */
-        .seal-space {
-            position: absolute;
-            top: 80px;
-            right: 100px;
-            width: 80px;
-            height: 80px;
-            border: 2px dashed #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ddd;
-            font-size: 10px;
-            text-align: center;
-        }
-        h1 { font-weight: 900; color: var(--mod-blue); letter-spacing: 0.1em; }
-        h3 { 
-            font-weight: 900; 
-            color: var(--mod-blue); 
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-        }
-        h3::before {
-            content: "";
-            display: inline-block;
-            width: 4px;
-            height: 1.2em;
-            background: var(--mod-blue);
-            margin-right: 12px;
-        }
-        ul { list-style-type: none; padding-left: 1.5em; }
-        li { position: relative; margin-bottom: 0.5em; }
-        li::before {
-            content: "・";
-            position: absolute;
-            left: -1.2em;
-            font-weight: bold;
-            color: var(--mod-blue);
-        }
-        .footer-note {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px double #ccc;
-            font-size: 0.8rem;
-            color: #666;
-        }
-        .back-link {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--mod-blue);
-            color: white;
-            padding: 10px 20px;
-            font-size: 12px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 2px;
-        }
+        :root { --main-color: #00ff41; --bg-color: #0d0d0d; }
+        body { background-color: var(--bg-color); color: var(--main-color); font-family: 'Courier New', Courier, monospace; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { border: 2px solid var(--main-color); padding: 30px; max-width: 500px; width: 100%; box-shadow: 0 0 15px rgba(0, 255, 65, 0.3); background: rgba(0, 0, 0, 0.8); }
+        h1 { text-align: center; border-bottom: 2px solid var(--main-color); padding-bottom: 10px; font-size: 1.5rem; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; background: #222; border: 1px solid var(--main-color); color: var(--main-color); box-sizing: border-box; outline: none; margin-bottom: 10px; font-size: 1rem; }
+        button { width: 100%; padding: 15px; background: var(--main-color); color: #000; border: none; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.3s; }
+        button:hover { background: #00cc33; box-shadow: 0 0 10px var(--main-color); }
+        button:disabled { background: #444; color: #888; cursor: not-allowed; }
+        .status { margin-top: 15px; text-align: center; font-size: 0.9rem; min-height: 1.2em; color: #ff4d4d; }
+        .footer { margin-top: 30px; font-size: 0.7rem; text-align: center; color: #555; }
+        .vote-label { font-size: 0.8rem; color: #888; margin-top: 5px; }
     </style>
 </head>
 <body>
 
-    <a href="https://tonziru-official.github.io/RDF-home/" class="back-link">◀ メインページへ戻る</a>
+<div class="container">
+    <h1>ゆっくりのしょー公式サーバー人気投票</h1>
+    <p style="text-align:center; font-size: 0.8rem;">--- ゆっくりのしょー公式サーバー人気投票 投票所 ---</p>
 
-    <div class="document-container">
-        <div class="seal-space">元帥>承認済</div>
-
-        <div class="text-center mb-20">
-            <h1 class="text-3xl">RDF 規約</h1>
-            <p class="text-xs text-gray-400 mt-2 tracking-[0.3em]">RAID DEFENSE FORCE REGULATION</p>
+    <div id="vote-section">
+        <div class="form-group">
+            <label for="mcid">Discordユーザー名</label>
+            <input type="text" id="mcid" placeholder="正確なDiscordユーザー名を入力してください" required>
         </div>
 
-        <section>
-            <h3>第1条　目的</h3>
-            <p class="pl-6">RDF（Rapid Defense Force）は、Discord上の荒らし行為・攻撃行為からサーバーを守るために加盟サーバー間で情報共有・自動通報・共同防衛を行う連合組織である。本規約は、RDFネットワークの秩序・安全性の維持を目的とする。</p>
-
-            <h3>第2条　適用範囲</h3>
-            <p class="pl-6 mb-2 text-sm font-bold text-gray-500 underline">本規約は以下に適用される。</p>
-            <ul>
-                <li>RDFに加盟するすべてのサーバー</li>
-                <li>RDFの連携Bot（RDF-Charlie など）</li>
-                <li>RDF運営チーム（本部）</li>
-                <li>RDFの情報を利用する外部協力者</li>
-            </ul>
-
-            <h3>第3条　加盟条件</h3>
-            <ul>
-                <li>反荒らし活動を主目的とすること</li>
-                <li>自サーバー及び外部に対して荒らし・攻撃行為を行わないこと</li>
-                <li>RDFの情報を悪用しないこと</li>
-                <li>RDF連携Botの導入に協力できること</li>
-                <li>過去に重大な規約違反のないこと</li>
-                <li>運営チームが承認した場合</li>
-            </ul>
-
-            <h3>第4条　禁止事項</h3>
-            <ul>
-                <li>RDFが提供する情報・データの無断公開、転載、二次配布</li>
-                <li>RDFや加盟サーバーの信用を損なう行為</li>
-                <li>RDF連携Botの改変・不正利用</li>
-                <li>他加盟サーバー・運営への誹謗中傷</li>
-                <li>法令またはDiscord規約に違反する行為</li>
-            </ul>
-
-            <h3>第5条　連携Botの利用</h3>
-            <ul>
-                <li>RDF連携Botは加盟サーバーに限り利用可能とする</li>
-                <li>Botのソースコード解析・再配布は禁止とする</li>
-                <li>Botが送信するデータを第三者へ提供することを禁止</li>
-                <li>Botが不具合・誤作動した場合、速やかに運営へ報告するものとする</li>
-            </ul>
-
-            <h3>第6条　情報の取り扱い</h3>
-            <ul>
-                <li>荒らし情報・ブラックリスト情報を外部へ漏洩してはならない</li>
-                <li>提供されたデータは加盟サーバー内でのみ使用可能とする</li>
-                <li>情報漏洩が発覚した場合、即時加盟停止の対象となる</li>
-            </ul>
-
-            <h3>第7条　加盟停止・除名</h3>
-            <ul>
-                <li>重大な規約違反が認められた場合、運営はサーバーを除名できる</li>
-                <li>軽度の違反の場合、警告または一時的な加盟停止を行う</li>
-                <li>除名後の再加盟は運営の審査を要する</li>
-            </ul>
-
-            <h3>第8条　免責事項</h3>
-            <ul>
-                <li>RDFはBotの停止・不具合による損害に責任を負わない</li>
-                <li>提供する情報の完全性・正確性を保証するものではない</li>
-                <li>加盟サーバー同士のトラブルに関してRDFは一切責任を負わない</li>
-            </ul>
-
-            <h3>第9条　規約の改定</h3>
-            <ul>
-                <li>RDF運営は必要に応じて規約を変更できる</li>
-                <li>重大な変更がある場合は加盟サーバーへ通知するものとする</li>
-                <li>改定後も利用を継続する場合、変更に同意したものとみなす</li>
-            </ul>
-
-            <h3>第10条　施行日</h3>
-            <p class="pl-6 font-bold text-blue-900 tracking-wider">本規約は公開日より施行する。</p>
-        </section>
-
-        <div class="footer-note flex justify-between items-end">
-            <div>
-                <p>RDF</p>
-                <p>2025/12/17</p>
-            </div>
-            <div class="text-right">
-                <p class="text-[10px] italic">Document ID: RDF-ToS-Main</p>
-            </div>
+        <div class="form-group">
+            <label>投票先）</label>
+            
+            <div class="vote-label">候補者を選んでください</div>
+            <select class="candidate-select">
+                <option value="">-- 候補者を選択 --</option>
+                <option value="ゆっくりのしょー">ゆっくりのしょー</option>
+                <option value="つけめん">つけめん</option>
+                <option value="ゆうせい">ゆうせい</option>
+                <option value="あき">あき</option>
+                <option value="しよう">しよう</option>
+                <option value="そうすけ">そうすけ</option>
+                <option value="まふぃん">まふぃん</option>
+                <option value="ほげーた">ほげーた</option>
+                <option value="なまちょこ">なまちょこ</option>
+                <option value="マントル">マントル</option>
+                <option value="とんじる">とんじる</option>
+            </select>
         </div>
+
+        <button id="submitBtn" onclick="submitVote()">投票を送信</button>
+        <div id="status" class="status"></div>
     </div>
 
+    <div class="footer">
+        &copy; ゆっくりのしょー公式サーバー人気投票管理委員会<br>
+        Powered by AI Election System
+    </div>
+</div>
+
+<script>
+    const VOTER_LIST = [
+    "minto_tomousimasu", "ike_12321", "suikun0732", "tmbibi1015_15168", "aoi069639", "gutsuchi0451_96595", "fiery_capybara_30091", "lucky_raccoon_05124", "aa_sansan", "hujiharu", "tomato04988", "kinakomochi0092_87029", "tomato066701", "warabi39", "arrow0301", "cocosu0343_19054", "yuuki046949", "rokomoko0721", "tararatamaha_73795", "yuki01183", "haru35ptoxingdumitosubayou", "giga06909", "pikabu0111_54696", "ame085330", "tazo0027", "katsuo0678", "nagetsuto0206", "3801_y_06882", "kekke1202", "match904_03985", "nimoti_planter.", "parthfinder_2006", "naa_number9", "yuuma0520.", "yotsushi03412", "itorai_youtube", "yuutodazo0614", "ahiru08488", "pmdayo", "senajyuou", "mini9850", "jtpjmp", "tatsutatsu0818", "pipiaruru", "saku13325", "aokin0807", "hahihuhetsuho", "mafin0118_51822", "ma1201ma_44928", "haumakinogu", "thao_ovtho0225", "osamu_samurai", "lobiseiya", "takenoko158", "wudinaaidoru", "potsuchiyan0706_26354", "nyankoon", "jojolove1678", "ozigiri0479_05365", "marurinn0116", "mix_fly", "ckpota", "kyouga1011_59719", "takitaroudegowasu", "hibiki0089_37928", "komu_dayo", "1228kazuto2_10106", "bureinboi_36691", "masao00944", "shungiku72_87864", "star_sei", "harukukun0728", "aogasa237", "daiki6954_88330", "atata556_45791", "painatsupuru0457", "aaaaaab400", "ckb1014", "yusei111923sabu", "gigikunn", "ryotasabu.", "nekomeronn_03462", "panda_dayoo_20886", "nusb", "mizinko0652", "h4ma.113", "potatosodo", "japanese_sushi__71421", "nekomaro99_88882", "sakana_chqn", "kamigonn", "tianzhongyangsheng.", "junpro0678", "yuu_noob3_51890", "subarupi", "sno_rashu", "pitsuki0045", "tamago_0439_00413", "kntei0457", "papp_0145", "tarasupa1117", "rezedayo", "rikuopu_61370", "kaishidananiki_07760", "katakuriko36361215", "ajitama0000", "so041413", "sol98a", "kemama0515_98968", "toge_toge_1044_47519", "amuri0371_64213", "roy123116", "japanesefood", "growagarden01006", "mnmn_3", "chikuwabu0455", "ka._.bigonnn", "abemusuka", "teriankatsukoxiao", "warumegane", "aallmmpp", "touma7280", "tabata_desu", "yyaku_", "haruki09785", "blueberth67", "bubbly_lynx_30641", "kanau117_50682", "shomaaaaa0644_88077", "hello_no2", "012099624202315", "ryocha1_54423", "yuutwoo0625_91208", "satokun0611", "syuuhei567890", "aiueo067362", "shiru0871", "modori_aa", "wewehq", "gura00267.com_55578", "onigiriya_32660", "omoti_114514", "40844984", "pppken9847_08125", "haruru2.0_81377", "atsus_leda_07184", "tomatogames", "hasu_25138", "4590057", "shintahattori", "oniku2000._72558", "momo_da123", "kobayasi_yudai", "r_k0220_38016", "saikyou0209", "suika072712", "katosanta", "zxsevo", "miu1020.", "taiki_0057_29969", "kur._.q", "irohasu_96958", "kuzilyou.sabutarou", "acs_kenra700", "yamami1209_59459", "ru.ru0129", "ebihurai00320", "manat0159_79349", "yarimasunee_114514", "huuma480", "ore03581", "oome777", "chikuwa0941", "ganbaru3197", "robuo4649", "takeeee0325", "jpmaron._07233", "hiiiiiiiiiiiiiiiiiiiii0791_16446", "dwdwdwdwdwdw1432_17555", "fuusan7859", "ain_dayo000", "tomatodesu727", "kw085148", "syunpi0326_04558", "gorira_1016", "sanatantann", "aaaaaa141431", "torippi0257_20719", "shiyushi0468", "shiomaguro_98233", "rip_fennec59_83728", "c1q4", "h9s0", "muuuuuuuuuko", "poti_1214_28114", "bureinrotsuto0959_70527", "247.5m", "ittaarata3101", "masarukigu316", "sota08654", "tarutaruch_86520", "syuuhei56789_man10", "taiyou09613", "chisotensei", "pukumaru_49181", "cangkong0214", "koken0022", "sentakub_asami123_68824", "nubudayo.", "takerupa", "united_puppy_02024p_41823", "aaaaa0658", "kawaiidakeziyanai_87045", "udonball777", "touma092", "kuuya0886", "konnitiha0278", "790450.", "taratarasupaekusudorimu_66038", "aki145314", "yaziyuutsutepeixinnei", "takahiro05585", "chako0413", "salmon0104.com_21138", "onje1020", "fps60player", "yuuto04670", "mocharate0279", "tokage000_41726", "yasu04575", "yu064932", "huru5555", "zichengbuyuriru_80108", "tanekun_jpn222", "naunau01984", "cao01101", "waraunko", "wajoe_0719_68739", "xtzxjp", "luanshaoki0379_09160", "kayuta777", "chocolate_21620", "bananadayooooon", "ao03567", "rio079762", "reinosuke20140729", "walolku", "tomato_49905", "yuyuu0530_79492", "eito0981", "hikatarou._25061", "rui5164", "raimo09834", "goriran0271_69805", "black_muskun", "donkikongu0252", "hima014379", "kinakomochi0645", "key123450748", "lnzmgraymam6767_22194", "negitoro0746", "korochiyama", "makkyrock0", "chako.0804", "pannoeranchi_31865", "ichi11081108", "ponyo_69", "kinopio0763_31666", "totsushi_31425", "iyu_uy", "i_love_sab.", "gachimuchigamu", "gogozir", "shiyonosuke0139", "nana810", "sousuke0403", "take095034", "taiki080728", "ryo027212", "yuuto065369", "ksmaksma11", "hello_roblox33", "botsukusu0446", "gtw_0610", "raki0693", "machiasudayo_26737._.", "tsutsupapa._88322", "pp_ad2", "gorikakinngu7565", "yajuu1919810114514", "yuuyuu0962", "hogehoge0962", "hello0252_", "gen8624._95052", "ao_123456789", "huang08457", "e_marukun_86651", "niku976", "kodaaa0270", "chachamaru0586", "kazuki00584", "masa_75082", "ryosuke_0612", "bannanna_3_90662", "2026kaito_05905", "nikuniku0381_78980", "mozya0537_52036", "giga_98837", "iiiiiaattt", "riku03856", "nubu0265_60133", "zhousheng0046", "4649250811", "shenyecaihua_02326", "bro027212", "itsumugames", "meron0698", "yuu515kuma_84526", "nasshi0439_43805", "enzo_0126", "taiyou0039", "hirochibo0911", "bashen0927_09890", "wartermelon0027", "geta_72252", "nesu810", "monki0001_14645", "akabibaru_60696", "subject_0101023", "zunda_poland", "kkfmmj13_88981", "mattya.mattya", "barbon13579", "enokitakeman3_96402", "piman04095", "poteto02401", "tanukichi882", "atsui_ice", "tousei0484", "takoshaoki0051_37490", "ma_y521", "shou12", "shiyoudayo1435", "goutou0419", "leafboy_09269", "mankind_rama_98157", "teruo1123_01108", "nyuus121sub", "pitto314_78880", "merody_bssab", "ryota3560", "sosuke_1214", "takuchan_0148", "karushifa5050", "aratadao_21808", "luck_o1206", "soccer_1234_", "zinziya0396", "pikagin_", "funa.3", "tountountuishi_15409", "duika0688", "r_k0566", "shousicanbai", "q02890", "oi076464", "sirokumanopantu", "ha2512_", "xjxmw.", "0106souma", "aku06121", "kuroneko_070", "abokabo0725._.", "koro051520happy_68839", "namabiru0714", "ittakunn333_70650", "sosuke0619", "chimokifen810_48658", "kenshinnakama", "gaku1301.", "dekaramin", "masadayo_0529", "aiueo04255", "renzhe0829", "kibachi0594_18361", "akihirorin", "yesir0310", "nubu_38760", "yumeou.boy_74490", "papua30_32136", "tanaka020210", "yuusei0731", "aiai_52706", "raikiyun", "pagetsuta", "yuutyeru.potechi", "yuson0952", "buruburupatapimu_", "edamame06875", "_tokachan", "mayopika_34568", "umu0443", "aotarou_39285", "reon0362", "0120640505", "avocado.1414", "doitime_10438", "roooi0224", "chiyourou0960", "yunoyuyu2104", "yuma0188_19927", "papurikasabu", "guidefire_58682", "yum_bacon02", "pandasama123", "rairai0577", "ousuke0703_98932", "gyouza0147", "aiba12246", "misokatu5g", "maujyuaki", "shyun.6767", "hello__no2", "danguri1229_87746", "wwww03145", "samonda", "22855688", "ebikunn8", "tomahaku.", "tontonihutaru", "shui0405_47672", "baburu03138", "hohoho3351", "namachiyoko0224_04451", "deidarayang.", "tds_1729", "yuto08719", "yamadaryou4545kimotiii", "chibi_brother", "masato922240", "toumo0781", "machiasuhuan", "arumaziro_93191", "kota010732", "simontrad25", "zi02777", "fouseikun", "xiarenexe", "xuejiandaihuku0727", "pepsi07926", "tofu.1222", "hyou5858_15213", "aito0990_85462", "purin1008_", "katura893", "ame01250", "m.t.8000", "sima_airmac", "shanguang0103_03660", "rakuten_fuguu", "bananadaio", ".corodesu", "karaage0678_10851", "arumaziro0834_28683", "dog_dayo", "kani04399", "sisyhc", "komazou123_25582", "shun603_15703", "disboyrbx", "r_13730", "yakisoba0401_15045", "xinjingruiki", "mi08320", "sunxinye11_57447", ".awa1", "tanishi0321", "sanma9537", "towa0393", "gszi_akkun", "niku_ya_72131", "tpmt4808", "pigg0317_56200", "ryusei00001", "setsukusu0322", "sakanananoda", "korori5963", "sihudayo1122", "hololive_love1000_85333", "rui08554", "cat03207", "ziyasumin0126_25036", "naekun0654_20610", "noobtoneko", "huihui135790", "potatocookie_", "kazumaaaaa98", "epezuigao", "riyou00087", "haru035853", "jv0220.", "akinobu1228_65300", "uni030612", "v03m", "haru096631", "ikisu52desu_30784", "touma2015_53789", "yuu12.04", "21231_67027", "amagutinpo", "imgeo0123", "tanaka_got", "aiueo_1219", "emi021949", "hamaguri0433", "nishinomura0427", "pagetsuta.", "koutaraman", "mizuki048515", "se1ta_1104_50866", "kousei0341_28312", "banig0735_95537", "borokami", "riyuu08272", "sanma0597", "chaoziehujinepanda", "nekomaru0235", "ab05032", "supuaikouka", "zei_330", "yamato_471423", "harukon0384", "buchita0879", "masakipppp_57466", "ruito427_49087", "issei170721", "aaaoooo111110429", "miraichan3111", "orafu5438", "roburogahaokida_70640", "neko03881", "chun03509", "matsutsu_35197", "yuumin_man_01822", "kapibara_535", "tibisuke0950", "stickman0307_35527", "mu_to312_35773", "chizukeki0250_57133", "aiueo03120", "kounosuke1234513", "gun09768", "white_dragon2k", "huzin0485", "ringo01393", "mutsuta0964", "haruma1276", "super_melon001010", "maruru_0909", "kinako04764", "potehu__35388", "ziyagaimoxiaosengdahaoki", "omoti0511_27450", "pyon12313", "takoshaokisantarou", "rst_syukasyu", "uruti_roblox", "yuuki09507", "robupotetorobpotato", "kimikun0124", "kaito078910", "yuu024551", "rekutan0928_69078", "neiri_7", "ajadg8243_88723", "onaragabuu_40027", "rei018852", "purin529_53063", "ponsen114514", "aaaaaaaaaa_17711", "sylphiette_fits", "0811subaru_84404", "rinrin.1209", "jdxddy_07481", "daizubobu", "kumakuma2012_40533", "kunkun05929", "kyapyy1019", "akaneko.1234", "matsuo0951", "rarara0842", "haruto1o1", "ryuse937", "kouta17359", "atsuage5488", "shenfa0289", "juchifengmo0146", "aokana0575", "tonbi0728", "shirokun_77", "hiropica9935", "shinnoniwa", "mill0759", "sashimistsuma", "katiku0724", "daiki05701", "rura09448", "asuna094496", "tat08247", "mumeikun", "toa0425_25791", "yotsuchiyan06103", "rikusan0743_37620", "riyouma0784", "dobunezumi0638", "minta0160", "tysm.s_92769", "minion06144", "daichi_dayo1225", "susaki0622", "123456789.oreo", "dpmgjpojg", "sasimijsjshshk7", "pikuseruganyarisunee", "banya0220_27112", "enegori1203_57934", "tamago77892", "yukkuri_sho100", "itsuchiyan0837_63841", "iueo0118", "burobuta", "riyousan0527", "hihihihi_45043", "gunpeto", "milk_02020", "zeasu_98", "muto0324.", "x2l8", "taiki_0057_51469", "ko_0520_74454", "tianpuraudonchgongshi_11718", "yummyyummyhappy12", "serlasso_89921", "pinatsutsubata0141", "alt0943", "puu.0827", "kanashii0364_63050", "yabecchi_", "aaaa041356", "burebo_", "bonzin327", "kanariihuan_90276", "ga0645", "maesuke1225", "ran92631", "hamtaro520", "riara14", "kitsuneko0401", "kentoui.", "kana150", "tuenokai", "bro_vani", "punipunichuxinzhe0492", "gorika_", "potetokun0056", "9c9i", "kakamokinm", "masa00347", "ringo013479", "hiyuuga0858_31739", "nekozame0846", "keikun.v2", "haruma0522", "namachiyoko0114", "yukisannfan_72949", "rtn_0524", "pupupurando0397", "muhata0328", "umisora_nyannneru", "aoto04562", "r00526", "vorafuru_51082", "okkuu37", "niyankogemuzu_44674", "hotate0758", "kota023476", "rivalskorekaragannbaru", "toppoge0125", "aron_sakugumi", "kai250912", "zunda114514", "r25675._72704", "hiro37564", "ajgt213_35458", "omochi_dayon", "niyonniyon1_52590", "tasukuman._64936", "aruzu123", "bomb664", "0zj996", "kume5", "abc089077", "kimuchinatto_", "cheerful_chipmunk_67241", "renkonnokaraage", "water04458", "seiryu0403_", "negimashen", "haruki75800", "hatsushiyudopoteto0262_64863", "takekenochi", "kanatan3756", "raikyun0454", "rifeee333_", "kechi3", "neru0_53", "nuketyon", "syouta0649", "furina_bloxfruits", "aiueo09494", "hinabo1226", "ritsukun0745", "pupudesu._03587", "yoshi03115", "ahiru08688", "hiyuugadesu_03865", "kitchenboy", "kouchannel_2024", "7001251", "warabimoti120", "kegani17", "ssk0039_42463", "kento05205", "kani_877", "ouri0715", "nikuro_0322", "tomato004056", "lionkeikun_nekoha", "yuyati11_46440", "yukky22222", "tomoki710_44954", "kaito20130531", "hurutupontiyoutube_49779", "kitachini", "tokagenoge", "kyouryutyann1234", "peace1017_68408", "siroru0614", "saruchiyanman.", "aka_tuki0241", "takuteintei", "sarugori0044_29517", "tommyr0904", "taigon4159", "onsentamago1111", "pocky112", "ichigomilk0712", "guang0906.", "miruki0619", "niwatori083_66296", "kaaaaaa572_34259", "wa02619", "nikotailang0160", "taku2862", ".minto10", "tomatonoemo", "sasuga0240_31291", "akaikaa", "taku_7046", "piyonosuke0140", "riyusikksseven", "mitsuhasi.", "ryutyan_73603"
+];
+
+
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbwVpdnzcXQ_bEzffDihh1B8TbjFQAzLH6n27sxGMASvN2mXMI5yFHcjEvgaRxW-G8D0/exec";
+
+    async function submitVote() {
+        const mcid = document.getElementById('mcid').value.trim();
+        const selects = document.querySelectorAll('.candidate-select');
+        const candidates = Array.from(selects).map(s => s.value);
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('status');
+
+
+        if (!VOTER_LIST.includes(mcid)) {
+            status.style.color = "#ff4d4d";
+            status.innerText = "❌ あなたは選挙人名簿に登録がないか、Discordユーザー名が間違っています。";
+            return;
+        }
+
+        if (!mcid || candidates.some(c => c === "")) {
+            status.style.color = "#ff4d4d";
+            status.innerText = "⚠️ 全ての項目を選択してください。";
+            return;
+        }
+
+
+        const realVotes = candidates.filter(c => c !== "白票");
+        const uniqueVotes = new Set(realVotes);
+        if (realVotes.length !== uniqueVotes.size) {
+            status.style.color = "#ff4d4d";
+            status.innerText = "⚠️ 同じ候補者に重複投票はできません。";
+            return;
+        }
+
+        if (!confirm(`${mcid} として投票を送信します。よろしいですか？`)) return;
+
+        btn.disabled = true;
+        status.style.color = "var(--main-color)";
+        status.innerText = "⏳ サーバーに送信中...";
+
+        try {
+            const response = await fetch(GAS_URL, {
+                method: "POST",
+                body: JSON.stringify({ mcid: mcid, candidates: candidates })
+            });
+            const result = await response.json();
+
+            if (result.status === "success") {
+                document.getElementById('vote-section').innerHTML = `
+                    <h2 style="text-align:center;">投票完了</h2>
+                    <p style="text-align:center;">受理されました。<br>しょーしょしょっしょ</p>
+                    <button onclick="location.reload()" style="margin-top:20px;">戻る</button>
+                `;
+            } else {
+                status.style.color = "#ff4d4d";
+                status.innerText = "❌ " + result.message;
+                btn.disabled = false;
+            }
+        } catch (e) {
+            status.style.color = "#ff4d4d";
+            status.innerText = "❌ 送信失敗。";
+            btn.disabled = false;
+        }
+    }
+</script>
 </body>
 </html>
